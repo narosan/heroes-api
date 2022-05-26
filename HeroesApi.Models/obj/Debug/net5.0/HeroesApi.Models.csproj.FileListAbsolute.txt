@@ -1,0 +1,12 @@
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\bin\Debug\net5.0\HeroesApi.Models.deps.json
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\bin\Debug\net5.0\HeroesApi.Models.dll
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\bin\Debug\net5.0\ref\HeroesApi.Models.dll
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\bin\Debug\net5.0\HeroesApi.Models.pdb
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\HeroesApi.Models.csproj.AssemblyReference.cache
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\HeroesApi.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\HeroesApi.Models.AssemblyInfoInputs.cache
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\HeroesApi.Models.AssemblyInfo.cs
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\HeroesApi.Models.csproj.CoreCompileInputs.cache
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\HeroesApi.Models.dll
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\ref\HeroesApi.Models.dll
+C:\Users\013767631\Documents\Repositorio\HeroesApi.Models\obj\Debug\net5.0\HeroesApi.Models.pdb
