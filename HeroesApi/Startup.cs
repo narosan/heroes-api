@@ -40,6 +40,7 @@ namespace HeroesApi
             // Configuração injeção de dependência.
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IJwtManagerRepository, JwtManagerRepository>();
+            services.AddTransient<IHeroesRepository, HeroesRepository>();
 
             // Configuração Mediator.
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
@@ -64,10 +65,11 @@ namespace HeroesApi
             {
                 var key = Encoding.UTF8.GetBytes(Configuration["JWT:Key"]);
                 opt.SaveToken = true;
-                opt.TokenValidationParameters = new TokenValidationParameters { 
+                opt.TokenValidationParameters = new TokenValidationParameters {
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = Configuration["JWT:Issuer"],
                     ValidAudience = Configuration["JWT:Audience"],
+                    ValidateAudience = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
@@ -80,8 +82,34 @@ namespace HeroesApi
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HeroesApi", Version = "v1" });
-            });
 
+                // Configurações Validações JWT no Swagger.
+                var jwtSecurityScheme = new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = @"Inserir Token Jwt",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    Reference = new OpenApiReference
+                    {
+                        Id = JwtBearerDefaults.AuthenticationScheme,
+                        Type = ReferenceType.SecurityScheme
+                    }
+                };
+
+                c.AddSecurityDefinition(
+                    jwtSecurityScheme.Reference.Id,
+                    jwtSecurityScheme
+                );
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement 
+                    {
+                        { jwtSecurityScheme, Array.Empty<string>() }
+                    }
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

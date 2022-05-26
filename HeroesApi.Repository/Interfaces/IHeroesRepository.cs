@@ -1,10 +1,11 @@
 ﻿using HeroesApi.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HeroesApi.Repository
 {
     public interface IHeroesRepository
     {
-        ICollection<Heroe> GetAll();
+        Task<IEnumerable<Heroe>> GetAll();
     }
 }

@@ -26,7 +26,6 @@ namespace HeroesApi.Repository
 
             var jwtHandler = new JwtSecurityTokenHandler();
             
-
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(
@@ -36,6 +35,8 @@ namespace HeroesApi.Repository
                     }
                 ),
                 Expires = DateTime.UtcNow.AddMinutes(30),
+                Audience = _configuration["JWT:Audience"],
+                Issuer = _configuration["JWT:Issuer"],
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(tokenKey), 
                     SecurityAlgorithms.HmacSha256Signature
