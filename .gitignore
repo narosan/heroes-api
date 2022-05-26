@@ -1,4 +1,5 @@
 caracteco
 caracteco1
-/obj
-/bin
+/obj/
+/bin/
+.vs/
