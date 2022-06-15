@@ -27,7 +27,8 @@ namespace HeroesApi.Application.Heroes.Get
         {
             HeroesRequestValidator validator = new();
             await validator.ValidateAndThrowAsync(request, cancellationToken);
-
+            
+            // Chamada ao repositorio para trazer todos os herois.
             var heroes = await _heroesRepository.GetAll();
             return _mapper.Map<IEnumerable<HeroeViewModel>>(heroes);
         }
